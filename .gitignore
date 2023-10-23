@@ -1,0 +1,11 @@
+node_modules
+*.log*
+.cache
+.DS_Store
+.editorconfig
+.vscode
+*.mp4
+*.ts
+*.m3u8
+assets/media
+preview
