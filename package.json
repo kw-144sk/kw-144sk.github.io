@@ -1,0 +1,28 @@
+{
+  "name": "gragefactory",
+  "description": "GrageFactory Reborn.",
+  "license": "UNLICENSED",
+  "author": "Nekosann",
+  "private": true,
+  "scripts": {
+    "build": "node configs/build-tmpl && (node configs/bs & npm run build-live)",
+    "build-live": "onchange 'assets/**/*' -e '**/_**/**' -- node configs/build-live {{file}}",
+    "media-comp": "node configs/mediacomp"
+  },
+  "dependencies": {
+    "argv": "0.0.3",
+    "browser-sync": "^2.29.3",
+    "ejs": "^3.1.9",
+    "fs-extra": "^11.1.1",
+    "glob": "~8.0.0",
+    "make-dir": "^4.0.0",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.31",
+    "postcss-gap-properties": "^5.0.0",
+    "postcss-preset-env": "^9.2.0",
+    "sass": "^1.69.4",
+    "sharp": "^0.32.6",
+    "uglify-js": "^3.17.4"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,191 @@
+$xs: 360px;
+$sm: 720px;
+$content: 980px;
+
+$breakpoints: (
+  xs: "screen and (min-width: #{$xs})",
+  sm: "screen and (min-width: #{$sm})",
+  content: "screen and (min-width: #{$content})"
+) !default;
+
+@mixin screen($bp: xl) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  background: #222 url(https://kw-144sk.github.io/img/bg000.3840.webp) repeat center top;
+  background-size: 1920px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 3vw;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+
+  @include screen(sm) {
+    font-size: 18px;
+  }
+}
+img {
+  max-width: 100%;
+}
+ul {
+  padding-left: 1.5em;
+}
+li {
+  &:nth-of-type(n+2){
+    margin-top:0.75em;
+  }
+  a {
+    color: inherit;
+  }
+}
+header {
+  // width: 100%;
+  padding: 3rem 1.0em 0;
+
+  text-align: center;
+}
+main {
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66) calc(100% - 200px), rgba(0, 0, 0, 0));
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+  }
+}
+footer {
+  width: 100%;
+  background-color: #b4b7a6;
+  text-align: center;
+}
+.en {
+  font-family: "Bebas Neue", "Zen Kaku Gothic New", sans-serif;
+}
+.headtitle {
+  display: table;
+  position: relative;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 1;
+  text-shadow:
+    2px 2px 0 #ffe9da,
+    -2px 2px 0 #ffe9da,
+    2px -2px 0 #ffe9da,
+    -2px -2px 0 #ffe9da;
+  color: #ffe9da;
+  margin: 0 auto;
+  letter-spacing: 0;
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "Report of defects and missing";
+    background: linear-gradient(0deg, #000, #bf5a2e);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+  }
+}
+article.article-base {
+  display: grid;
+  gap: 3em;
+  grid-template-columns: 1fr;
+  max-width: 980px;
+  padding: 0 1rem;
+  margin: 3em auto;
+  color: #fff;
+
+  h2 {
+    margin: 0;
+  }
+
+  .introducton {
+    line-height: 1.7;
+    text-shadow: 2px 1px 3px black;
+  }
+  .version-info {
+    font-size: 2em;
+    line-height: 1.4;
+    text-shadow: 2px 1px 3px black;
+
+    small {
+      display: inline-block;
+      font-size: 0.6em;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      padding-left: 1em;
+      color: #ff7338;
+    }
+  }
+
+  ul.jumping {
+    display: flex;
+    color: #fff;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    line-height: 1;
+    gap: 1em 2em;
+    li {
+      margin:0;
+      text-align: center;
+      font-size: 2em;
+      width:100%;
+      
+      @include screen(sm) {
+        width:auto;
+      }
+
+      a {
+        font-weight: 500;
+      }
+
+      &:nth-last-of-type(1) {
+        width: calc(50% - 1em);
+        font-size: 1.5em;
+        text-align: left;
+      }
+      &:nth-last-of-type(2) {
+        width: calc(50% - 1em);
+        font-size: 1.5em;
+        text-align: right;
+      }
+    }
+  }
+  dl.reports {
+    background-color: #b4b7a6;
+    border: outset #ddded4 2px;
+    border-top: none;
+    color: #363636;
+    margin: 1rem auto 0;
+    dt {
+      border-top: outset #ddded4 2px;
+      border-bottom: outset #ddded4 2px;
+      padding: 0.25em 0.5em;
+      margin: 0;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+    dd {
+      background: transparent;
+      padding: 0.25em 0.5em;
+      margin: 0;
+      font-size: 0.9em;
+    }
+  }
+}
+.kinds {
+  text-align: center;
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+}
