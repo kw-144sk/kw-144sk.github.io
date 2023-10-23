@@ -3,7 +3,7 @@
     "preview": {
       "CATION":"処理負荷軽減のため近日中に修正予定",
       "file": "index.ejs",
-      "styles": ["docs/fm2r-rodam/index.css"],
+      "styles": ["docs/fm2r-rod/index.css"],
       "testcase": [
         {
           "from": "http://localhost:800",
