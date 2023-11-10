@@ -3,6 +3,6 @@
 .DS_Store
 .editorconfig
 .vscode
-*.mp4
+# *.mp4
 *.ts
 *.m3u8
